@@ -13,13 +13,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color _color = Color(0xFFFFFFFF);
-  var rng = Random();
+  Color _color = const Color(0xFFFFFFFF);
+  Random rng = Random();
 
 
   void _changeColor() {
     setState(() {
-      int colorNum =rng.nextInt(16777215); //as its equals FFFFFF the maximum color num in  hex
+      //as its equals FFFFFF the maximum color num in  hex
+      final int colorNum =rng.nextInt(16777215);
       _color=Color(0xFFffff*colorNum);
     });
   }
